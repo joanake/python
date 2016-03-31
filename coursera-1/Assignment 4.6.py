@@ -7,23 +7,21 @@
 ## You should use raw_input to read a string and float() to convert the string to a number. 
 ## Do not worry about error checking the user input unless you want to - you can assume the user types numbers properly.
 
+
+hrs = raw_input("Enter Hours:")
+rph = raw_input("Enter Rate:")
+hrs = float(hrs)
+rph = float(rph)
+
 def computepay(h,r):
-    
-	if h > 40:
-    	p = (40 * r) + ((h - 40) * (1.5 * r))
+	if (h>40):
+    	pay = (h - 40) * (r * 1.5) + (40 * r)
+
 	else:
-    	p = h * r
-	return p
-        
-try: 
-	hrs = raw_input("Enter Hours:")
-	hrs = float(hrs) 
-	rate = raw_input("Enter Rate:")
-	rate = float(rate)
-    
-except:
-	print 'Please enter numeric input'
-	quit()
+    	pay = h * r
+	return pay
+
+print computepay(hrs,rph)
     
 p = computepay(hrs,rate)
 print p
